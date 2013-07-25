@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-menu, .icon-cog, .icon-close, .icon-expand, .icon-contract, .icon-user {
+.supports-fontface .icon-menu, .supports-fontface .icon-cog, .supports-fontface .icon-close, .supports-fontface .icon-expand, .supports-fontface .icon-contract, .supports-fontface .icon-user {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -35,23 +35,82 @@ you can use the generic selector below, but it's slower:
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-/*	-webkit-font-smoothing: antialiased;*/
+	-webkit-font-smoothing: antialiased;
 }
+
+/*.icon-menu, .icon-cog, .icon-close, .icon-expand, .icon-contract, .icon-user {
+
+}*/
+/*
+.icon-menu {
+	text-indent: 4em;
+}
+*/
+
 .icon-menu:before {
 	content: "\61";
+	background-image: url("images/menu.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
 }
 .icon-cog:before {
 	content: "\62";
+	background-image: url("images/cog.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
 }
 .icon-close:before {
 	content: "\63";
+	background-image: url("images/close.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
 }
 .icon-expand:before {
 	content: "\64";
+	background-image: url("images/expand.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
 }
 .icon-contract:before {
 	content: "\65";
+	background-image: url("images/contract.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
 }
 .icon-user:before {
 	content: "\66";
+	background-image: url("images/user.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
+}
+.icon-user:before {
+	content: "\66";
+	background-image: url("images/user.png");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center center;
+	padding: 1em;
+}
+
+/* Temp */
+.supports-fontface [class*="icon-"]:before {
+	background-image: none;
+}
+
+/* Temp */
+html:not(.supports-fontface) [class*="icon-"]:before {
+	text-indent: -9999px;
+	display: inline-block;
 }
