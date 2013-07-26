@@ -27,15 +27,29 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.supports-fontface .icon-menu, .supports-fontface .icon-cog, .supports-fontface .icon-close, .supports-fontface .icon-expand, .supports-fontface .icon-contract, .supports-fontface .icon-user {
-	font-family: 'icomoon';
+[class*="icon-"] {
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+	position: relative;
+	display: block;
+	background-repeat: no-repeat;
 	-webkit-font-smoothing: antialiased;
+	height: 16px;
+	width: 16px;
+	font: 0 W;
+}
+[class*="icon-"]:before {
+	font-family: 'icomoon';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	font-size: 16px;
 }
 
 /*.icon-menu, .icon-cog, .icon-close, .icon-expand, .icon-contract, .icon-user {
@@ -47,65 +61,51 @@ you can use the generic selector below, but it's slower:
 }
 */
 
+.icon-menu {
+	background-image: url("images/menu.png");
+}
 .icon-menu:before {
 	content: "\61";
-	background-image: url("images/menu.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
+}
+.icon-cog {
+	background-image: url("images/cog.png");
 }
 .icon-cog:before {
 	content: "\62";
-	background-image: url("images/cog.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
+}
+.icon-close {
+	background-image: url("images/close.png");
 }
 .icon-close:before {
 	content: "\63";
-	background-image: url("images/close.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
+}
+.icon-expand {
+	background-image: url("images/expand.png");
 }
 .icon-expand:before {
 	content: "\64";
-	background-image: url("images/expand.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
+}
+.icon-contract {
+	background-image: url("images/contract.png");
 }
 .icon-contract:before {
 	content: "\65";
-	background-image: url("images/contract.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
+}
+.icon-user {
+	background-image: url("images/user.png");
 }
 .icon-user:before {
 	content: "\66";
+}
+.icon-user {
 	background-image: url("images/user.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
 }
 .icon-user:before {
 	content: "\66";
-	background-image: url("images/user.png");
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-	background-position: center center;
-	padding: 1em;
 }
 
 /* Temp */
-.supports-fontface [class*="icon-"]:before {
+.supports-fontface [class*="icon-"] {
 	background-image: none;
 }
 
@@ -113,4 +113,5 @@ you can use the generic selector below, but it's slower:
 html:not(.supports-fontface) [class*="icon-"]:before {
 	text-indent: -9999px;
 	display: inline-block;
+	background-position: 0 0;
 }

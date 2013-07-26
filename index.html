@@ -9,44 +9,27 @@
 
 	<!-- Styles of icon fonts -->
 	<link rel="stylesheet" href="style.css" />
-
-	<style>
-		@font-face {
-			font-family: "pn";
-			src: url("type/pn.eot");
-			src: url("type/pn.eot?#iefix") format("embedded-opentype"),
-			     url("type/pn.woff") format("woff"),
-			     url("type/pn.ttf") format("truetype"),
-			     url("type/pn.svg#pn") format("svg");
-			font-weight: bold;
-			font-style: italic;
-		}
-		#control {
-			font: bold italic 1.6em "pn", cursive;
-		}
-		html {
-			background: #f8dad8;
-		}
-		.supports-fontface {
-			background: #d8f8ee;
-		}
-	</style>
 </head>
 <body>
-	<div id="control">
-		Proxima Nova.
+
+	<div>
+		<span aria-hidden="true" class="icon icon-menu">Menu</span>
 	</div>
-
-	<br>
-
-	<!-- Icon fonts -->
-		<span aria-hidden="true" class="icon icon-menu"></span>
-		<span aria-hidden="true" class="icon icon-cog"></span>
-		<span aria-hidden="true" class="icon icon-close"></span>
-		<span aria-hidden="true" class="icon icon-expand"></span>
-		<span aria-hidden="true" class="icon icon-contract"></span>
-		<span aria-hidden="true" class="icon icon-user"></span>
-	<!-- /Icon fonts -->
+	<div>
+		<span aria-hidden="true" class="icon icon-cog">Settings</span>
+	</div>
+	<div>
+		<span aria-hidden="true" class="icon icon-close">Close</span>
+	</div>
+	<div>
+		<span aria-hidden="true" class="icon icon-expand">Expand</span>
+	</div>
+	<div>
+		<span aria-hidden="true" class="icon icon-contract">Contract</span>
+	</div>
+	<div>
+		<span aria-hidden="true" class="icon icon-user">Account</span>
+	</div>
 
 	<script>
 		(function( win, undefined ) {
@@ -64,9 +47,6 @@
 						wppre8 = ua.indexOf( "windows phone" ) > -1 && win.navigator.userAgent.match( /IEMobile\/([0-9])+/ ) && parseFloat( RegExp.$1 ) >= 9,
 						oldandroid = wkvers < 533 && ua.indexOf( "Android 2.1" ) > -1;
 
-					if( webos || oldandroid || wppre8 ) {
-						alert( "Blacklisted" );
-					}
 					return webos || oldandroid || wppre8;
 				}()),
 				sheet;
@@ -84,7 +64,7 @@
 			}
 			if( res ) {
 				var html = document.getElementsByTagName( "html" )[ 0 ];
-				html.setAttribute( "class", html.getAttribute( "class" ) + " supports-fontface" );
+				html.setAttribute( "class", ( html.getAttribute( "class" ) ? html.getAttribute( "class" ) + " " : "" ) + "supports-fontface" );
 			}
 		}( this ));
 	</script>
