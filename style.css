@@ -9,26 +9,7 @@
 	font-style: normal;
 }
 
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-/*[data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-*/
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-[class*="icon-"] {
-	speak: none;
+.icon {
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -42,7 +23,7 @@ you can use the generic selector below, but it's slower:
 	width: 16px;
 	font: 0 W;
 }
-[class*="icon-"]:before {
+.supports-fontface .icon:before {
 	font-family: 'icomoon';
 	position: absolute;
 	left: 0;
@@ -50,68 +31,76 @@ you can use the generic selector below, but it's slower:
 	top: 0;
 	bottom: 0;
 	font-size: 16px;
+	speak: none;
 }
 
-/*.icon-menu, .icon-cog, .icon-close, .icon-expand, .icon-contract, .icon-user {
-
-}*/
-/*
-.icon-menu {
-	text-indent: 4em;
-}
-*/
-
+/* PNG fallbacks*/
 .icon-menu {
 	background-image: url("images/menu.png");
+}
+.supports-fontface .icon-menu {
+	background-image: none;
 }
 .icon-menu:before {
 	content: "\61";
 }
+
 .icon-cog {
 	background-image: url("images/cog.png");
+}
+.supports-fontface .icon-cog {
+	background-image: none;
 }
 .icon-cog:before {
 	content: "\62";
 }
+
 .icon-close {
 	background-image: url("images/close.png");
+}
+.supports-fontface .icon-close { 
+	background: none;
 }
 .icon-close:before {
 	content: "\63";
 }
+
 .icon-expand {
 	background-image: url("images/expand.png");
 }
+.supports-fontface .icon-expand {
+	background-image: none;
+} 
 .icon-expand:before {
 	content: "\64";
 }
+
 .icon-contract {
 	background-image: url("images/contract.png");
+}
+.supports-fontface .icon-contract {
+	background-image: none;
 }
 .icon-contract:before {
 	content: "\65";
 }
-.icon-user {
-	background-image: url("images/user.png");
-}
-.icon-user:before {
-	content: "\66";
-}
-.icon-user {
-	background-image: url("images/user.png");
-}
-.icon-user:before {
-	content: "\66";
-}
 
-/* Temp */
-.supports-fontface [class*="icon-"] {
+.icon-user {
+	background-image: url("images/user.png");
+}
+.supports-fontface .icon-user {
 	background-image: none;
 }
-
-/* Temp */
-html:not(.supports-fontface) [class*="icon-"]:before {
-	text-indent: -9999px;
-	display: inline-block;
-	background-position: 0 0;
+.icon-user:before {
+	content: "\66";
 }
+
+/* Text fallbacks*/
+.fallback-txt {
+	font-size: 16px;
+	background-image: none;
+}
+.fallback-txt:before {
+	font: 0 W;
+}
+
