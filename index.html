@@ -36,9 +36,9 @@
 
 			if ( !!sheet && !blacklist ) {
 				try {
-					sheet.insertRule( rule, 0 );
-					res = sheet.cssRules[ 0 ].cssText && ( /webfont/i ).test( sheet.cssRules[ 0 ].cssText );
-					sheet.deleteRule( sheet.cssRules.length - 1 );
+					sheet.cssText = rule;
+					res = sheet.cssText && ( /webfont/i ).test( sheet.cssText );
+					sheet.cssText = "";
 				} catch( e ) { }
 			}
 			if( res ) {
