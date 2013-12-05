@@ -97,10 +97,10 @@
 
 /* Text fallbacks*/
 .fallback-txt {
-	font-size: 16px;
+	font: 0 W;
 	background-image: none;
 }
 .fallback-txt:before {
-	font: 0 W;
+	font-size: 16px;
 }
 
