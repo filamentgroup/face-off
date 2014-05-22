@@ -1,5 +1,7 @@
 # Retired
 
+[![Filament Group](http://filamentgroup.com/images/fg-logo-positive-sm-crop.png) ](http://www.filamentgroup.com/)
+
 This repository is now officially retired and currently resides in Florida spending its time watching daytime television and playing golf.
 
 The code from the repo was officially merged into [Modernizr as part of Issue 1120](https://github.com/Modernizr/Modernizr/issues/1120).
